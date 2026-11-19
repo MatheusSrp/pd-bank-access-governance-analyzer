@@ -10,7 +10,7 @@ export async function getRules(): Promise<RuleRecord[]> {
   return asList<RuleRecord>(await request<unknown>('/api/rules'), ['rules'])
 }
 
-export function getIndicators(): Promise<Record<string, unknown>> {
+export async function getIndicators(): Promise<Record<string, unknown>> {
   const result = await request<Record<string, unknown>>('/api/indicators')
   return { ...result, summary: normalizeSummary(result.latest) }
 }
