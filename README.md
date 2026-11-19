@@ -212,22 +212,21 @@ pd-bank-access-governance-analyzer/
 
 ## 👥 Equipe
 
-| Integrante | Papel no projeto | GitHub |
-|---|---|---|
-| Abrão Filipi dos Santos | A definir | A adicionar |
-| Caio Cesar Leandro Amorim | A definir | A adicionar |
-| Danilo Gabriel Diniz e Silva | A definir | A adicionar |
-| Boniek Araújo dos Santos Júnior | A definir | A adicionar |
-| João Rafael Morato Uchoa Cavalcanti | A definir | A adicionar |
-| Alisson da Silva Santana | A definir | A adicionar |
-| Alice Maria Sena Pereira | A definir | A adicionar |
-| Mateus Valerino Barros de Santana | A definir | A adicionar |
-| Matheus do Nascimento Gomes Vaz | A definir | A adicionar |
-| Maria Larysse Yasmin Lira Pereira | A definir | A adicionar |
-| Letícia Gomes da Silva | A definir | A adicionar |
-| Marcio Aureliano Pedro da Silva | A definir | A adicionar |
+| Integrante | Papel no projeto |
+|---|---|
+| Abrão Filipi dos Santos | Decisões dos casos públicos e validação das premissas |
+| Caio Cesar Leandro Amorim | Qualidade do dataset e interpretação dos resultados |
+| Danilo Gabriel Diniz e Silva | Apoio à execução técnica e integração do sistema |
+| Boniek Araújo dos Santos Júnior | Execução técnica, README e pacote executável |
+| João Rafael Morato Uchoa Cavalcanti | Frontend e integração visual com a API |
+| Alice Maria Sena Pereira | Catálogo e revisão das regras de governança |
+| Mateus Valerino Barros de Santana | Apoio ao plano e à execução dos testes |
+| Matheus do Nascimento Gomes Vaz | Plano e execução dos testes formais |
+| Maria Larysse Yasmin Lira Pereira | QA final e montagem do ZIP de entrega |
+| Letícia Gomes da Silva | Documentação acadêmica e Security & Governance Playbook |
+| Marcio Aureliano Pedro da Silva | Slides e apresentação do projeto |
 
-> Os papéis e perfis do GitHub serão preenchidos após a divisão das atividades, evitando atribuições não confirmadas.
+
 
 ## 🤝 Colaboração e fluxo de trabalho
 
