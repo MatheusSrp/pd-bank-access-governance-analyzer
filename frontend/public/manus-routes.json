@@ -1,0 +1,17 @@
+{
+  "routes": [
+    { "path": "/", "title": "Visão geral" },
+    { "path": "/dashboard", "title": "Visão geral" },
+    { "path": "/datasets", "title": "Datasets" },
+    { "path": "/analyses/new", "title": "Nova análise" },
+    { "path": "/analyses", "title": "Histórico" },
+    { "path": "/analyses/:id", "title": "Detalhe da análise" },
+    { "path": "/findings", "title": "Achados" },
+    { "path": "/findings/:id", "title": "Detalhe do achado" },
+    { "path": "/governance/access", "title": "Governança de acessos" },
+    { "path": "/governance/data", "title": "Proteção de dados" },
+    { "path": "/governance/ai", "title": "Governança de IA" },
+    { "path": "/reports", "title": "Relatórios" },
+    { "path": "/settings", "title": "Configurações" }
+  ]
+}

@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-pd_bank}
+      POSTGRES_USER: ${POSTGRES_USER:-pd_bank}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD em .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"   # só localhost; remova se não precisar acessar o banco do host
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pd_bank} -d ${POSTGRES_DB:-pd_bank}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+  api:
+    build: .
+    environment:
+      # POSTGRES_PASSWORD entra numa URL: use apenas letras, números, '-' e '_' (sem @ : / ? # %).
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-pd_bank}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-pd_bank}
+      PORT: 8080
+      CORS_ORIGINS: ${CORS_ORIGINS:-}
+      API_KEY: ${API_KEY:-}
+    ports:
+      - "${API_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  postgres_data:
