@@ -1,0 +1,810 @@
+{
+  "arquivo": "PD_Bank_Analyzer_Dataset_Completo_Alunos_1.xlsx",
+  "sha256": "70e7e7598125fa5026fbc36adba65322247c3adac62d699020fc0157c2299e76",
+  "data_referencia": "2026-11-05",
+  "P1_schema": {
+    "abas_esperadas": 20,
+    "abas_presentes": 20,
+    "abas_extras": [],
+    "registros": 1890,
+    "abas": {
+      "dataset_info": {
+        "linhas": 8,
+        "cabecalhos": [
+          "campo",
+          "valor"
+        ],
+        "sem_tratamento": []
+      },
+      "usuarios": {
+        "linhas": 150,
+        "cabecalhos": [
+          "area",
+          "data_admissao",
+          "manager_id",
+          "nome_ficticio",
+          "papel_primario",
+          "papel_primario_id",
+          "status",
+          "user_id"
+        ],
+        "sem_tratamento": []
+      },
+      "aplicacoes": {
+        "linhas": 20,
+        "cabecalhos": [
+          "application_id",
+          "application_name",
+          "criticality",
+          "environment",
+          "owner_id",
+          "status"
+        ],
+        "sem_tratamento": []
+      },
+      "recursos": {
+        "linhas": 16,
+        "cabecalhos": [
+          "application_id",
+          "classification",
+          "criticality",
+          "resource_id",
+          "resource_name",
+          "resource_type"
+        ],
+        "sem_tratamento": []
+      },
+      "catalogo_papeis": {
+        "linhas": 14,
+        "cabecalhos": [
+          "area",
+          "privileged_role",
+          "role_id",
+          "role_name"
+        ],
+        "sem_tratamento": []
+      },
+      "atribuicoes_papeis": {
+        "linhas": 163,
+        "cabecalhos": [
+          "assignment_type",
+          "end_date",
+          "role_id",
+          "start_date",
+          "user_id"
+        ],
+        "sem_tratamento": []
+      },
+      "rbac_baseline": {
+        "linhas": 46,
+        "cabecalhos": [
+          "allowed_permission",
+          "expected_access_mode",
+          "resource_id",
+          "role_id"
+        ],
+        "sem_tratamento": []
+      },
+      "permissoes_atuais": {
+        "linhas": 536,
+        "cabecalhos": [
+          "access_mode",
+          "assignment_source",
+          "business_justification",
+          "expiration_date",
+          "grant_date",
+          "last_used_date",
+          "permission",
+          "permission_id",
+          "principal_id",
+          "principal_type",
+          "resource_id"
+        ],
+        "sem_tratamento": []
+      },
+      "regras_sod": {
+        "linhas": 8,
+        "cabecalhos": [
+          "rationale",
+          "role_a",
+          "role_b",
+          "rule_id",
+          "severity"
+        ],
+        "sem_tratamento": []
+      },
+      "revisoes_acesso": {
+        "linhas": 420,
+        "cabecalhos": [
+          "decision",
+          "next_review_date",
+          "principal_id",
+          "resource_id",
+          "review_comment",
+          "review_date",
+          "review_id",
+          "reviewer_id"
+        ],
+        "sem_tratamento": []
+      },
+      "ativos_dados": {
+        "linhas": 30,
+        "cabecalhos": [
+          "asset_name",
+          "business_area",
+          "classification",
+          "contains_credentials",
+          "contains_financial_data",
+          "contains_personal_data",
+          "data_asset_id",
+          "owner_id",
+          "purpose",
+          "resource_id",
+          "status"
+        ],
+        "sem_tratamento": []
+      },
+      "campos_dados": {
+        "linhas": 135,
+        "cabecalhos": [
+          "data_asset_id",
+          "data_category",
+          "direct_identifier",
+          "field_id",
+          "field_name",
+          "sensitive"
+        ],
+        "sem_tratamento": []
+      },
+      "eventos_compartilhamento": {
+        "linhas": 100,
+        "cabecalhos": [
+          "data_asset_id",
+          "destination",
+          "destination_approved",
+          "minimum_data_only",
+          "protected",
+          "purpose",
+          "recipient_type",
+          "requested_by",
+          "sharing_date",
+          "sharing_id"
+        ],
+        "sem_tratamento": []
+      },
+      "politicas_retencao": {
+        "linhas": 30,
+        "cabecalhos": [
+          "data_asset_id",
+          "evidence_required",
+          "exception_condition",
+          "final_action",
+          "owner_id",
+          "policy_status",
+          "retention_days",
+          "retention_policy_id",
+          "start_event"
+        ],
+        "sem_tratamento": []
+      },
+      "casos_uso_ia": {
+        "linhas": 15,
+        "cabecalhos": [
+          "action_level",
+          "ai_use_case_id",
+          "application_id",
+          "business_area",
+          "impact_level",
+          "name",
+          "owner_id",
+          "purpose",
+          "status"
+        ],
+        "sem_tratamento": []
+      },
+      "fontes_dados_ia": {
+        "linhas": 34,
+        "cabecalhos": [
+          "access_level",
+          "ai_use_case_id",
+          "data_asset_id",
+          "minimized",
+          "source_approved"
+        ],
+        "sem_tratamento": []
+      },
+      "controles_ia": {
+        "linhas": 15,
+        "cabecalhos": [
+          "ai_use_case_id",
+          "human_review",
+          "input_validation",
+          "logging",
+          "output_validation",
+          "privilege_model",
+          "prompt_injection_protection"
+        ],
+        "sem_tratamento": []
+      },
+      "excecoes": {
+        "linhas": 4,
+        "cabecalhos": [
+          "approved_by",
+          "exception_id",
+          "expiration_date",
+          "reason",
+          "resource_or_asset_id",
+          "status",
+          "subject_id"
+        ],
+        "sem_tratamento": []
+      },
+      "casos_teste_publicos": {
+        "linhas": 15,
+        "cabecalhos": [
+          "domain",
+          "expected_category",
+          "expected_decision",
+          "expected_priority",
+          "related_id",
+          "scenario",
+          "subject_id",
+          "test_case_id"
+        ],
+        "sem_tratamento": []
+      },
+      "dicionario_de_dados": {
+        "linhas": 131,
+        "cabecalhos": [
+          "arquivo",
+          "campo",
+          "descricao"
+        ],
+        "sem_tratamento": []
+      }
+    },
+    "cabecalhos_sem_tratamento": 0
+  },
+  "P2_relacoes": {
+    "relacoes": [
+      {
+        "relacao": "usuarios.papel_primario_id",
+        "linhas": 150,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "usuarios.manager_id",
+        "linhas": 150,
+        "orfaos": 10,
+        "exemplos": [
+          "M001"
+        ]
+      },
+      {
+        "relacao": "atribuicoes_papeis.user_id",
+        "linhas": 163,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "atribuicoes_papeis.role_id",
+        "linhas": 163,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "rbac_baseline.role_id",
+        "linhas": 46,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "rbac_baseline.resource_id",
+        "linhas": 46,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "permissoes_atuais.principal_id",
+        "linhas": 536,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "permissoes_atuais.resource_id",
+        "linhas": 536,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "revisoes_acesso.principal_id",
+        "linhas": 420,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "revisoes_acesso.resource_id",
+        "linhas": 420,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "revisoes_acesso.reviewer_id",
+        "linhas": 420,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "recursos.application_id",
+        "linhas": 16,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "aplicacoes.owner_id",
+        "linhas": 20,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "ativos_dados.resource_id",
+        "linhas": 30,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "ativos_dados.owner_id",
+        "linhas": 30,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "campos_dados.data_asset_id",
+        "linhas": 135,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "eventos_compartilhamento.data_asset_id",
+        "linhas": 100,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "eventos_compartilhamento.requested_by",
+        "linhas": 100,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "politicas_retencao.data_asset_id",
+        "linhas": 30,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "casos_uso_ia.application_id",
+        "linhas": 15,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "casos_uso_ia.owner_id",
+        "linhas": 15,
+        "orfaos": 1,
+        "exemplos": [
+          "Proposta"
+        ]
+      },
+      {
+        "relacao": "fontes_dados_ia.ai_use_case_id",
+        "linhas": 34,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "fontes_dados_ia.data_asset_id",
+        "linhas": 34,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "controles_ia.ai_use_case_id",
+        "linhas": 15,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "excecoes.subject_id",
+        "linhas": 4,
+        "orfaos": 0,
+        "exemplos": []
+      },
+      {
+        "relacao": "excecoes.approved_by",
+        "linhas": 4,
+        "orfaos": 0,
+        "exemplos": []
+      }
+    ],
+    "usuarios_gestor_de_si_mesmo": [
+      "U011",
+      "U021",
+      "U031",
+      "U041",
+      "U051",
+      "U061",
+      "U071",
+      "U081",
+      "U091",
+      "U101",
+      "U111",
+      "U121",
+      "U131",
+      "U141"
+    ],
+    "compartilhamentos_pedidos_por_desligado": [
+      "SH002(U037)",
+      "SH022(U111)"
+    ],
+    "casos_ia_sem_controles": [],
+    "ativos_sem_politica_retencao": []
+  },
+  "P3_principals_aplicacao": {
+    "total": 29,
+    "aplicacoes": 18,
+    "por_permissao": {
+      "Write": 3,
+      "Execute": 1,
+      "Admin": 16,
+      "Read": 9
+    },
+    "por_criticidade_recurso": {
+      "alta": 17,
+      "critica": 11,
+      "media": 1
+    },
+    "admin_em_recurso_critico": [
+      "P0510:APP02->RES02",
+      "P0512:APP03->RES03",
+      "P0515:APP05->RES06",
+      "P0516:APP06->RES06",
+      "P0524:APP12->RES12",
+      "P0526:APP15->RES15",
+      "P0535:APP20->RES06"
+    ],
+    "modos": {
+      "Permanente": 29
+    },
+    "justificativas": {
+      "Acesso tecnico da aplicacao": 29
+    },
+    "aplicacoes_com_dono_nao_ativo": []
+  },
+  "P4_usuarios_licenca": {
+    "usuarios": [
+      {
+        "user_id": "U052",
+        "papel": "Aprovador_Pagamento",
+        "permissoes": 4,
+        "niveis": {
+          "Approve": 1,
+          "Read": 2,
+          "Write": 1
+        },
+        "uso_ultimos_30_dias": [
+          "RES02:Approve@2026-10-31"
+        ]
+      },
+      {
+        "user_id": "U105",
+        "papel": "Auditor",
+        "permissoes": 6,
+        "niveis": {
+          "Read": 6
+        },
+        "uso_ultimos_30_dias": [
+          "RES01:Read@2026-10-20",
+          "RES02:Read@2026-10-15"
+        ]
+      }
+    ],
+    "status_usuarios": {
+      "Ativo": 143,
+      "Desligado": 5,
+      "Licenca": 2
+    },
+    "data_inicio_licenca_disponivel": false
+  },
+  "P5_linhas_ia_deslocadas": {
+    "linhas_inconsistentes": [
+      {
+        "linha": 8,
+        "ai_use_case_id": "AI07",
+        "original": {
+          "ai_use_case_id": "AI07",
+          "name": "Analise_RH",
+          "application_id": "APP17",
+          "business_area": "Resumir avaliacoes de colaboradores",
+          "purpose": "Recomendar",
+          "action_level": "Alto",
+          "impact_level": "U016",
+          "owner_id": "Proposta",
+          "status": null
+        },
+        "reconstruida": {
+          "ai_use_case_id": "AI07",
+          "name": "Analise_RH",
+          "application_id": "APP17",
+          "business_area": null,
+          "purpose": "Resumir avaliacoes de colaboradores",
+          "action_level": "Recomendar",
+          "impact_level": "Alto",
+          "owner_id": "U016",
+          "status": "Proposta"
+        }
+      }
+    ]
+  },
+  "P6_revisoes": {
+    "decisoes": {
+      "Pendente": 155,
+      "Manter": 257,
+      "Remover": 8
+    },
+    "recertificacao_vencida_total": 124,
+    "recertificacao_vencida_por_atraso_dias": {
+      "91_180": 39,
+      "mais_180": 41,
+      "31_90": 32,
+      "ate_30": 12
+    },
+    "pendentes_ainda_nao_vencidas": 0
+  },
+  "P7_excecoes": {
+    "excecoes": [
+      {
+        "exception_id": "EX001",
+        "subject_id": "U003",
+        "resource_or_asset_id": "RES03",
+        "reason": "Acesso legado em revisao",
+        "expiration_date": "2026-12-01",
+        "status": "Ativa",
+        "achados_cobertos": [
+          "R01:Excesso_de_Privilegio"
+        ]
+      },
+      {
+        "exception_id": "EX002",
+        "subject_id": "U057",
+        "resource_or_asset_id": "RES06",
+        "reason": "Suporte temporario a migracao",
+        "expiration_date": "2026-11-30",
+        "status": "Ativa",
+        "achados_cobertos": [
+          "R01:Modo_de_Acesso_Divergente"
+        ]
+      },
+      {
+        "exception_id": "EX003",
+        "subject_id": "DA11",
+        "resource_or_asset_id": null,
+        "reason": "Retencao estendida por auditoria",
+        "expiration_date": "2027-06-30",
+        "status": "Ativa",
+        "achados_cobertos": []
+      },
+      {
+        "exception_id": "EX004",
+        "subject_id": "AI03",
+        "resource_or_asset_id": null,
+        "reason": "Piloto com revisao humana integral",
+        "expiration_date": "2026-12-31",
+        "status": "Ativa",
+        "achados_cobertos": []
+      }
+    ],
+    "tc15": {
+      "test_case_id": "TC15",
+      "domain": "Integrado",
+      "subject_id": "AI03",
+      "related_id": "DA12",
+      "scenario": "Piloto alto impacto com exceção válida",
+      "expected_priority": "Medio",
+      "expected_decision": "Atencao",
+      "expected_category": "Excecao_Valida"
+    },
+    "ai03": {
+      "caso": {
+        "ai_use_case_id": "AI03",
+        "name": "Deteccao_Fraude",
+        "application_id": "APP19",
+        "business_area": "Risco_Auditoria",
+        "purpose": "Priorizar transacoes suspeitas",
+        "action_level": "Recomendar",
+        "impact_level": "Alto",
+        "owner_id": "U008",
+        "status": "Desenvolvimento"
+      },
+      "controles": [
+        {
+          "ai_use_case_id": "AI03",
+          "input_validation": "Sim",
+          "output_validation": "Sim",
+          "prompt_injection_protection": "Sim",
+          "human_review": "Obrigatoria",
+          "logging": "Sim",
+          "privilege_model": "Privilégio_Minimo"
+        }
+      ],
+      "fontes": [
+        {
+          "ai_use_case_id": "AI03",
+          "data_asset_id": "DA02",
+          "source_approved": "Sim",
+          "minimized": "Sim",
+          "access_level": "Read"
+        },
+        {
+          "ai_use_case_id": "AI03",
+          "data_asset_id": "DA12",
+          "source_approved": "Sim",
+          "minimized": "Sim",
+          "access_level": "Read"
+        },
+        {
+          "ai_use_case_id": "AI03",
+          "data_asset_id": "DA21",
+          "source_approved": "Sim",
+          "minimized": "Sim",
+          "access_level": "Read"
+        },
+        {
+          "ai_use_case_id": "AI03",
+          "data_asset_id": "DA26",
+          "source_approved": "Sim",
+          "minimized": "Sim",
+          "access_level": "Read"
+        }
+      ]
+    },
+    "retencao_da11": [
+      {
+        "retention_policy_id": "RP011",
+        "data_asset_id": "DA11",
+        "start_event": "Criacao_ou_Encerramento",
+        "retention_days": "1095",
+        "final_action": "Arquivar_e_Excluir",
+        "exception_condition": "Investigacao_ou_Hold",
+        "evidence_required": "Aprovacao_e_Log",
+        "owner_id": "U013",
+        "policy_status": "Hipotese_Educacional"
+      }
+    ]
+  },
+  "P8_campos_dados": {
+    "campos": 135,
+    "ativos_com_campos": 30,
+    "ativos_sem_campos": [],
+    "sensivel_x_identificador": {
+      "Sim/Nao": 35,
+      "Sim/Sim": 11,
+      "Nao/Nao": 89
+    },
+    "categorias": {
+      "Financeiro": 20,
+      "Pessoal": 19,
+      "Operacional": 89,
+      "Credencial": 7
+    },
+    "campo_pessoal_mas_ativo_sem_dado_pessoal": [],
+    "campo_financeiro_mas_ativo_sem_dado_financeiro": [
+      "DA01",
+      "DA09",
+      "DA10",
+      "DA16"
+    ],
+    "identificador_direto_em_ativo_abaixo_de_confidencial": [],
+    "compartilhamentos_minimos_de_ativo_com_identificador_direto": [
+      "SH004",
+      "SH012",
+      "SH014",
+      "SH025",
+      "SH030",
+      "SH034",
+      "SH044",
+      "SH055",
+      "SH064",
+      "SH072",
+      "SH074",
+      "SH085",
+      "SH090",
+      "SH094"
+    ]
+  },
+  "achados": {
+    "total": 431,
+    "por_regra": {
+      "R01": 16,
+      "R02": 5,
+      "R03": 7,
+      "R04": 65,
+      "R05": 25,
+      "R06": 3,
+      "R07": 19,
+      "R08": 4,
+      "R09": 287
+    },
+    "por_tipo": {
+      "R01:Excesso_de_Privilegio": 11,
+      "R01:Modo_de_Acesso_Divergente": 5,
+      "R02:Conflito_SoD": 5,
+      "R03:Classificacao_Ausente": 1,
+      "R03:Classificacao_Divergente": 5,
+      "R03:Proprietario_Ausente": 1,
+      "R04:Destino_Nao_Aprovado": 46,
+      "R04:Protecao_Insuficiente": 16,
+      "R04:Retencao_Ausente": 3,
+      "R05:Acesso_Excessivo": 2,
+      "R05:Fonte_Nao_Aprovada": 4,
+      "R05:Fonte_Sem_Minimizacao": 12,
+      "R05:Guardrail_Ausente": 6,
+      "R05:Risco_Integrado": 1,
+      "R06:Agencia_Excessiva": 2,
+      "R06:Dado_Inconsistente": 1,
+      "R07:Conta_Desligada": 19,
+      "R08:Acesso_Expirado": 4,
+      "R09:Recertificacao_Vencida": 124,
+      "R09:Remocao_Nao_Executada": 8,
+      "R09:Revisao_Vencida": 155
+    }
+  },
+  "copia_corrigida": {
+    "arquivo": "PD_Bank_Dataset_AI07_Corrigido_TESTE.xlsx",
+    "linhas_corrigidas": [
+      "AI07"
+    ],
+    "achados": {
+      "total": 431,
+      "por_regra": {
+        "R01": 16,
+        "R02": 5,
+        "R03": 7,
+        "R04": 65,
+        "R05": 26,
+        "R06": 2,
+        "R07": 19,
+        "R08": 4,
+        "R09": 287
+      },
+      "por_tipo": {
+        "R01:Excesso_de_Privilegio": 11,
+        "R01:Modo_de_Acesso_Divergente": 5,
+        "R02:Conflito_SoD": 5,
+        "R03:Classificacao_Ausente": 1,
+        "R03:Classificacao_Divergente": 5,
+        "R03:Proprietario_Ausente": 1,
+        "R04:Destino_Nao_Aprovado": 46,
+        "R04:Protecao_Insuficiente": 16,
+        "R04:Retencao_Ausente": 3,
+        "R05:Acesso_Excessivo": 2,
+        "R05:Fonte_Nao_Aprovada": 4,
+        "R05:Fonte_Sem_Minimizacao": 12,
+        "R05:Guardrail_Ausente": 7,
+        "R05:Risco_Integrado": 1,
+        "R06:Agencia_Excessiva": 2,
+        "R07:Conta_Desligada": 19,
+        "R08:Acesso_Expirado": 4,
+        "R09:Recertificacao_Vencida": 124,
+        "R09:Remocao_Nao_Executada": 8,
+        "R09:Revisao_Vencida": 155
+      }
+    },
+    "delta_por_tipo": {
+      "R05:Guardrail_Ausente": 1,
+      "R06:Dado_Inconsistente": -1
+    }
+  },
+  "sha256_original_apos_copia": "70e7e7598125fa5026fbc36adba65322247c3adac62d699020fc0157c2299e76"
+}
