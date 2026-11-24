@@ -7,3 +7,10 @@ __pycache__
 tests
 docs
 .pytest_cache
+
+frontend
+node_modules
+dist
+.env.*
+*.log
+storage

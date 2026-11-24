@@ -1,0 +1,20 @@
+{
+  "executed_at": "2026-11-24T20:21:37.340Z",
+  "api_base_url": "http://localhost:8080",
+  "runtime": "v24.21.0",
+  "mode": "Módulos reais via Vite SSR em Node, sem navegador",
+  "dataset_id": 3,
+  "analysis_id": 3,
+  "findings": 431,
+  "checks": [
+    "saúde",
+    "validação multipart",
+    "importação",
+    "contagem normalizada",
+    "execução da análise",
+    "detalhe da análise",
+    "paginação e X-Total-Count",
+    "detalhe do achado",
+    "indicadores"
+  ]
+}
