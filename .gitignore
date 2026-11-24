@@ -5,3 +5,11 @@ __pycache__/
 *.py[cod]
 *.db
 storage/
+
+# Frontend e arquivos locais
+node_modules/
+dist/
+.env.*
+!.env.example
+*.tsbuildinfo
+*.log

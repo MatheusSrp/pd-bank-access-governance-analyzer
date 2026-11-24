@@ -1,0 +1,13 @@
+{
+  "executed_at": "2026-11-24T20:32:11.079599+00:00",
+  "source": "ZIP extraído em diretório novo, com venv e node_modules novos",
+  "checks": {
+    "pip_check": "No broken requirements found.",
+    "pytest": "........................................................................ [ 52%]\n............................................ssssss................       [100%]\n132 passed, 6 skipped in 2.60s",
+    "npm_ci_and_build": "OK: instalação nova e build concluídos (Vite 6.4.6)",
+    "two_processes_active": "API 18082 e frontend 5174 respondendo HTTP 200",
+    "http_flow": "OK: 30 verificações; dataset=1; análise=1; achados=431",
+    "frontend_modules": "> pd-bank-governance-frontend@1.0.0 smoke:api\n> node scripts/smoke-api.mjs\n\nOK: 9 verificações do cliente frontend; achados=431"
+  },
+  "browser_ui": "Não executada: navegador automatizado indisponível"
+}

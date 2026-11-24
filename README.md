@@ -108,87 +108,201 @@ O frontend e o backend são executados separadamente e se comunicam pela API RES
 | Infraestrutura | Docker, Docker Compose |
 | Versionamento | Git e GitHub |
 
-## 🚀 Como executar localmente
+## 🚀 Instalação oficial: SQLite + frontend
 
-### Pré-requisitos
-
-- Python 3.10 ou superior.
-- Node.js e npm compatíveis com as dependências do frontend.
-- Git.
-- Docker Desktop **opcional** para executar com PostgreSQL.
-
-### 1. Clonar o repositório
+Este é o caminho oficial da entrega acadêmica v0.4.0. Use dois terminais, sempre
+partindo da raiz do projeto. Requer Python 3.10+, Node.js 20+ com npm e Git.
+A execução foi validada em Linux com Python 3.14 e Node.js 24; detalhes e limitações
+estão no [relatório de Boniek](docs/entregas/boniek/relatorio_execucao.md).
 
 ```bash
-git clone https://github.com/SEU-USUARIO/pd-bank-access-governance-analyzer.git
+git clone https://github.com/jaozinnm/pd-bank-access-governance-analyzer.git
 cd pd-bank-access-governance-analyzer
 ```
 
-Substitua `SEU-USUARIO` pelo proprietário real do repositório.
+### 1. Backend — terminal 1
 
-### 2. Backend — terminal 1 (Windows PowerShell)
+Linux/macOS:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+export DATABASE_URL=sqlite:///pd_bank_analyzer.db
+export CORS_ORIGINS=http://localhost:5173
+export API_KEY=""
+python app.py
+```
+
+Windows PowerShell:
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+$env:DATABASE_URL = "sqlite:///pd_bank_analyzer.db"
 $env:CORS_ORIGINS = "http://localhost:5173"
+$env:API_KEY = ""
 python app.py
 ```
 
-- **API:** http://localhost:8080
-- **Saúde:** http://localhost:8080/api/health
-- **Documentação Swagger:** http://localhost:8080/docs
+O SQLite é criado automaticamente na raiz; não precisa instalar um servidor de banco.
+A API inicia em **http://localhost:8080**. Saúde: **http://localhost:8080/api/health**;
+Swagger: **http://localhost:8080/docs**; contrato: **http://localhost:8080/openapi.json**.
+O Swagger carrega recursos de uma CDN e requer internet.
 
-O banco padrão de desenvolvimento é SQLite. Não é necessário instalar PostgreSQL para a primeira execução local.
+### 2. Frontend — terminal 2
 
-### 3. Frontend — terminal 2
-
-```powershell
+```bash
 cd frontend
-Copy-Item .env.example .env
 npm ci
 npm run dev
 ```
 
-- **Interface web:** http://localhost:5173
+Abra **http://localhost:5173**. Os padrões já apontam para a API local, sem criar `.env`.
+Para configurar outra API, copie `frontend/.env.example` para `frontend/.env.local`
+(`cp` no Linux/macOS ou `Copy-Item` no PowerShell), ajuste os valores e reinicie o Vite.
+Consulte o [README do frontend](frontend/README.md).
 
-Confirme no arquivo `frontend/.env` que `VITE_API_BASE_URL` aponta para `http://localhost:8080`.
+### 3. Demonstração com o Excel oficial
 
-### 4. Fluxo de demonstração
+1. Em **Datasets**, selecione `tests/data/PD_Bank_Analyzer_Dataset_Completo_Alunos_1.xlsx`.
+2. Aguarde a validação e clique em **Importar dataset**. A base tem 20 abas e 1.890 registros.
+3. Clique na ação **Executar análise** do dataset ou abra **Nova análise** e selecione-o.
+4. Deixe a data de referência vazia, clique em **Revisar configuração** e **Confirmar execução**.
+5. Confira **431 achados**, com referência **2026-11-05**, consulte a paginação e abra um achado.
+6. Use os botões **JSON** e **CSV** no resultado, ou abra **Relatórios** para exportar.
 
-1. Acesse a interface no navegador.
-2. Importe um dataset compatível.
-3. Execute uma nova análise.
-4. Consulte os indicadores e os achados.
-5. Abra um achado para visualizar suas evidências.
-6. Exporte os resultados em JSON ou CSV.
+Esses totais são o snapshot da v0.4.0 para o arquivo oficial original; não use a
+planilha corrigida de César para reproduzi-los. A base tem inconsistências conhecidas
+(como AI07) e o sistema não as corrige automaticamente. Veja a
+[nota de qualidade](docs/entregas/cesar/nota_qualidade_dados.md).
+
+Com a API ativa, este teste reproduz upload, análise, consulta e as duas exportações
+por HTTP, conferindo também CORS e conteúdo dos arquivos. Cria **um novo dataset e
+uma nova análise por execução**; use uma instância de demonstração:
+
+```bash
+python scripts/smoke_test.py --out /tmp/pdbank-smoke.json
+```
+
+No Windows, use `--out "$env:TEMP/pdbank-smoke.json"`.
+Exemplos de consulta (substitua `1` pelo ID retornado, `curl.exe` no PowerShell):
+
+```bash
+curl -f http://localhost:8080/api/health
+curl -f "http://localhost:8080/api/findings?analysis_id=1&limit=20&offset=0"
+curl -f "http://localhost:8080/api/analyses/1/export?format=json" -o analysis-1.json
+curl -f "http://localhost:8080/api/analyses/1/export?format=csv" -o analysis-1.csv
+```
+
+Se `API_KEY` estiver configurada, adicione `-H "X-API-Key: SUA_CHAVE_LOCAL"` ao curl;
+o teste de fumaça lê `API_KEY` do ambiente.
+
+### Variáveis de ambiente
+
+**`python app.py` não lê `.env` automaticamente.** Exporte as variáveis no terminal.
+O Compose lê o `.env` raiz; o Vite lê `frontend/.env.local`. Não misture esses arquivos.
+
+| Variável | Padrão / finalidade |
+|---|---|
+| `DATABASE_URL` | `sqlite:///pd_bank_analyzer.db`; caminho relativo ao diretório de execução |
+| `CORS_ORIGINS` | Vazio desliga CORS; use `http://localhost:5173` para este guia. Várias origens separadas por vírgula |
+| `API_KEY` | Vazia desliga autenticação local. Se definida, exige `X-API-Key` em `/api/*`, exceto saúde |
+| `HOST` / `PORT` | `127.0.0.1` / `8080` na execução Python local |
+| `FLASK_DEBUG` | Desligado; `1` ativa debug apenas para desenvolvimento |
+| `MAX_UPLOAD_MB` | `50`; frontend também limita upload a 50 MB |
+| `APP_TIMEZONE` | `America/Sao_Paulo` |
+| `VITE_API_BASE_URL` | `http://localhost:8080`; URL acessível pelo navegador, sem `/api` ao final |
+| `VITE_API_KEY` | Opcional; mesma chave da API para demonstração. É pública no bundle do navegador |
+| `VITE_APP_VERSION` | `1.0.0`, versão da interface; backend permanece v0.4.0 |
+| `POSTGRES_DB` / `POSTGRES_USER` | `pd_bank` no Compose |
+| `POSTGRES_PASSWORD` | Obrigatória no Compose; somente letras, números, `-` e `_` para compor a URL |
+| `POSTGRES_PORT` / `API_PORT` | `5432` / `8080` no host do Compose |
+
+Variáveis `VITE_*` são incorporadas no build. Após alterá-las, reinicie `npm run dev`
+ou gere um novo build. Não coloque credenciais de produção no frontend.
 
 ### Alternativa: Docker + PostgreSQL
 
+Requer Docker Engine/Desktop ativo com Compose. O frontend continua no terminal 2.
+Copie o exemplo para `.env` na raiz (`Copy-Item .env.example .env` no PowerShell):
+
 ```bash
-docker compose up --build
+cp .env.example .env
 ```
 
-Antes de usar Docker, copie `.env.example` para `.env` e configure as variáveis necessárias, especialmente a senha do PostgreSQL. O frontend continua sendo executado separadamente em desenvolvimento.
+Edite `POSTGRES_PASSWORD` com uma senha local própria antes de iniciar. O exemplo
+já contém `CORS_ORIGINS=http://localhost:5173`. Pare a API SQLite antes de usar a
+mesma porta, ou altere `API_PORT` e `VITE_API_BASE_URL` em conjunto.
 
-## 🧪 Testes e verificações
+```bash
+docker compose up --build -d --wait
+docker compose ps
+curl -f http://localhost:8080/api/health
+python scripts/smoke_test.py
+docker compose down
+```
 
-Na raiz do projeto:
+O último comando preserva o volume do banco. `docker compose down -v` **apaga os
+dados do projeto**: use apenas se quiser reiniciar a demonstração do zero.
+O caminho oficial continua SQLite; o resultado do teste Docker está no relatório.
+
+## 🧪 Testes, build e pacote
+
+Com o ambiente Python ativado, na raiz:
 
 ```bash
 python -m pytest -q
 ```
 
+Os testes PostgreSQL são opcionais e requerem `TEST_POSTGRES_URL` apontando para um
+**banco exclusivo de teste**, com permissão para criar schemas. Cada teste cria e
+remove seu próprio schema; não use o banco da demonstração.
+
 No diretório `frontend/`:
 
 ```bash
+npm ci
 npm run build
+npm run preview -- --port 5173
 ```
 
-Os comandos acima devem ser executados pelos colaboradores antes de abrir um Pull Request. **Não presumimos que testes e build passaram em todas as máquinas:** consulte os resultados da execução mais recente.
+O preview acima usa a mesma origem já permitida pela API. Sem `--port 5173`, o
+preview deste projeto usa **3000**: adicione essa origem a `CORS_ORIGINS` para usá-lo.
+`dist/` é gerado localmente e não faz parte do código entregue.
 
-O backend inclui documentação adicional em [`docs/API.md`](docs/API.md) e um relatório de validação em [`docs/v0.4.0-relatorio.md`](docs/v0.4.0-relatorio.md).
+Depois de revisar e fazer commit das alterações, gere um ZIP apenas dos arquivos
+versionados (execute na raiz; o ZIP fica fora do projeto):
+
+```bash
+git archive --format=zip --prefix=pd-bank-access-governance-analyzer/ -o ../pd-bank-v0.4.0-boniek.zip HEAD
+```
+
+Extraia em uma pasta nova e repita a instalação, testes, build e demonstração acima.
+Não inclua `.env`, `.env.local`, banco, `.venv`, `node_modules`, `dist`, caches ou `.git`.
+Os arquivos `.env.example` são modelos e devem permanecer. As evidências da entrega
+estão em [`docs/entregas/boniek/`](docs/entregas/boniek/).
+
+## 🔧 Troubleshooting
+
+| Sintoma | Como resolver |
+|---|---|
+| `npm ci` falha | Execute em `frontend/`, com o `package-lock.json` entregue e Node 20+. Confira rede/registro npm |
+| PowerShell bloqueia `Activate.ps1` | Use `.\.venv\Scripts\python.exe` no lugar de `python`, sem ativar o ambiente |
+| Porta 8080 ocupada | Pare a outra API ou ajuste `PORT` (local) / `API_PORT` (Compose) e `VITE_API_BASE_URL` |
+| Porta 5173 ocupada | O Vite falha por `strictPort`; libere a porta ou ajuste a porta e `CORS_ORIGINS` juntos |
+| Saúde responde, mas tela não carrega dados | Confira a URL da API e CORS; `localhost` e `127.0.0.1` são origens diferentes |
+| HTTP 401 | Configure a mesma `API_KEY` no backend e `VITE_API_KEY` no frontend; reinicie o Vite |
+| CORS no preview | Use `npm run preview -- --port 5173` ou permita `http://localhost:3000` no backend |
+| Variável no `.env` não surte efeito | Python local requer exportação no terminal; o `.env` raiz só é lido pelo Compose |
+| Banco SQLite não abre | Inicie na raiz e use um diretório gravável; não inclua o arquivo `.db` no PR |
+| HTTP 413 | Arquivo excede `MAX_UPLOAD_MB`; o frontend aceita no máximo 50 MB |
+| Docker não inicia | Confira daemon, acesso ao socket, senha no `.env`, portas livres e `docker compose logs api db` |
+| Achados diferentes de 431 | Use o Excel original e deixe a data vazia; outras bases/datas podem mudar o resultado |
+
+Contrato da API: [`docs/API.md`](docs/API.md). Validação anterior da versão:
+[`docs/v0.4.0-relatorio.md`](docs/v0.4.0-relatorio.md).
 
 ## 📂 Estrutura do repositório
 
