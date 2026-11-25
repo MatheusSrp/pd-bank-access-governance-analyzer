@@ -28,7 +28,10 @@ Projeto acadêmico de análise de governança desenvolvido para um cenário banc
 
 O **PD Bank Access & Governance Analyzer** é uma plataforma web de apoio à auditoria e à governança de um banco fictício. O sistema recebe datasets em formatos estruturados, executa regras determinísticas e apresenta resultados para investigação, priorização e tomada de decisão.
 
-O foco não é realizar operações financeiras, mas **identificar possíveis desvios de controle** em três dimensões: identidade e acesso, proteção de dados e governança de IA.
+O foco não é realizar operações financeiras, mas **identificar possíveis desvios de controle** em três dimensões: 
+- identidade e acesso, 
+- proteção de dados, 
+- governança de IA.
 
 > **Diferencial:** cada achado pode apresentar regra acionada, severidade, evidência, origem na planilha, impacto e recomendação. O resultado auxilia a revisão humana; não revoga permissões nem modifica os dados auditados automaticamente.
 
@@ -110,10 +113,10 @@ O frontend e o backend são executados separadamente e se comunicam pela API RES
 
 ## 🚀 Instalação oficial: SQLite + frontend
 
-Este é o caminho oficial da entrega acadêmica v0.4.0. Use dois terminais, sempre
-partindo da raiz do projeto. Requer Python 3.10+, Node.js 20+ com npm e Git.
-A execução foi validada em Linux com Python 3.14 e Node.js 24; detalhes e limitações
-estão no [relatório de Boniek](docs/entregas/boniek/relatorio_execucao.md).
+Use dois terminais, sempre partindo da raiz do projeto. 
+Requer: Python 3.10+, Node.js 20+ com npm e Git.
+A execução foi validada em Linux com Python 3.14 e Node.js 24; 
+Detalhes e limitações estão disponíveis no [Relatório de Boniek](docs/entregas/boniek/relatorio_execucao.md).
 
 ```bash
 git clone https://github.com/jaozinnm/pd-bank-access-governance-analyzer.git
@@ -147,8 +150,10 @@ python app.py
 ```
 
 O SQLite é criado automaticamente na raiz; não precisa instalar um servidor de banco.
+
 A API inicia em **http://localhost:8080**. Saúde: **http://localhost:8080/api/health**;
 Swagger: **http://localhost:8080/docs**; contrato: **http://localhost:8080/openapi.json**.
+
 O Swagger carrega recursos de uma CDN e requer internet.
 
 ### 2. Frontend — terminal 2
@@ -160,8 +165,10 @@ npm run dev
 ```
 
 Abra **http://localhost:5173**. Os padrões já apontam para a API local, sem criar `.env`.
+
 Para configurar outra API, copie `frontend/.env.example` para `frontend/.env.local`
 (`cp` no Linux/macOS ou `Copy-Item` no PowerShell), ajuste os valores e reinicie o Vite.
+
 Consulte o [README do frontend](frontend/README.md).
 
 ### 3. Demonstração com o Excel oficial
@@ -174,9 +181,9 @@ Consulte o [README do frontend](frontend/README.md).
 6. Use os botões **JSON** e **CSV** no resultado, ou abra **Relatórios** para exportar.
 
 Esses totais são o snapshot da v0.4.0 para o arquivo oficial original; não use a
-planilha corrigida de César para reproduzi-los. A base tem inconsistências conhecidas
-(como AI07) e o sistema não as corrige automaticamente. Veja a
-[nota de qualidade](docs/entregas/cesar/nota_qualidade_dados.md).
+planilha corrigida de César para reproduzi-los. 
+A base tem inconsistências conhecidas(como AI07) e o sistema não as corrige automaticamente. 
+Veja a [nota de qualidade](docs/entregas/cesar/nota_qualidade_dados.md).
 
 Com a API ativa, este teste reproduz upload, análise, consulta e as duas exportações
 por HTTP, conferindo também CORS e conteúdo dos arquivos. Cria **um novo dataset e
