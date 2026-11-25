@@ -1,0 +1,891 @@
+{
+  "arquivo": "PD_Bank_Analyzer_Dataset_Completo_Alunos_1.xlsx",
+  "importacao": {
+    "abas_lidas": 20,
+    "abas_reconhecidas": 20,
+    "abas_desconhecidas": [],
+    "registros": 1890,
+    "linhas_por_aba": {
+      "dataset_info": 8,
+      "usuarios": 150,
+      "aplicacoes": 20,
+      "recursos": 16,
+      "catalogo_papeis": 14,
+      "atribuicoes_papeis": 163,
+      "rbac_baseline": 46,
+      "permissoes_atuais": 536,
+      "regras_sod": 8,
+      "revisoes_acesso": 420,
+      "ativos_dados": 30,
+      "campos_dados": 135,
+      "eventos_compartilhamento": 100,
+      "politicas_retencao": 30,
+      "casos_uso_ia": 15,
+      "fontes_dados_ia": 34,
+      "controles_ia": 15,
+      "excecoes": 4,
+      "casos_teste_publicos": 15,
+      "dicionario_de_dados": 131
+    },
+    "avisos": [],
+    "valido": true
+  },
+  "data_referencia": "2026-11-05",
+  "fonte_data_referencia": "dataset_info.data_referencia",
+  "resumo": {
+    "total": 431,
+    "by_severity": {
+      "critical": 44,
+      "high": 119,
+      "medium": 142,
+      "low": 126
+    },
+    "by_status": {
+      "non_compliant": 428,
+      "insufficient_information": 1,
+      "valid_exception": 2,
+      "compliant": 0
+    },
+    "by_rule": {
+      "R01": 16,
+      "R02": 5,
+      "R03": 7,
+      "R04": 65,
+      "R05": 25,
+      "R06": 3,
+      "R07": 19,
+      "R08": 4,
+      "R09": 287
+    },
+    "by_type": {
+      "Acesso_Excessivo": 2,
+      "Acesso_Expirado": 4,
+      "Agencia_Excessiva": 2,
+      "Classificacao_Ausente": 1,
+      "Classificacao_Divergente": 5,
+      "Conflito_SoD": 5,
+      "Conta_Desligada": 19,
+      "Dado_Inconsistente": 1,
+      "Destino_Nao_Aprovado": 46,
+      "Excesso_de_Privilegio": 11,
+      "Fonte_Nao_Aprovada": 4,
+      "Fonte_Sem_Minimizacao": 12,
+      "Guardrail_Ausente": 6,
+      "Modo_de_Acesso_Divergente": 5,
+      "Proprietario_Ausente": 1,
+      "Protecao_Insuficiente": 16,
+      "Recertificacao_Vencida": 124,
+      "Remocao_Nao_Executada": 8,
+      "Retencao_Ausente": 3,
+      "Revisao_Vencida": 155,
+      "Risco_Integrado": 1
+    },
+    "expired_exceptions": 0
+  },
+  "achados_por_regra_e_tipo": [
+    {
+      "regra": "R01",
+      "tipo": "Excesso_de_Privilegio",
+      "qtd": 11
+    },
+    {
+      "regra": "R01",
+      "tipo": "Modo_de_Acesso_Divergente",
+      "qtd": 5
+    },
+    {
+      "regra": "R02",
+      "tipo": "Conflito_SoD",
+      "qtd": 5
+    },
+    {
+      "regra": "R03",
+      "tipo": "Classificacao_Ausente",
+      "qtd": 1
+    },
+    {
+      "regra": "R03",
+      "tipo": "Classificacao_Divergente",
+      "qtd": 5
+    },
+    {
+      "regra": "R03",
+      "tipo": "Proprietario_Ausente",
+      "qtd": 1
+    },
+    {
+      "regra": "R04",
+      "tipo": "Destino_Nao_Aprovado",
+      "qtd": 46
+    },
+    {
+      "regra": "R04",
+      "tipo": "Protecao_Insuficiente",
+      "qtd": 16
+    },
+    {
+      "regra": "R04",
+      "tipo": "Retencao_Ausente",
+      "qtd": 3
+    },
+    {
+      "regra": "R05",
+      "tipo": "Acesso_Excessivo",
+      "qtd": 2
+    },
+    {
+      "regra": "R05",
+      "tipo": "Fonte_Nao_Aprovada",
+      "qtd": 4
+    },
+    {
+      "regra": "R05",
+      "tipo": "Fonte_Sem_Minimizacao",
+      "qtd": 12
+    },
+    {
+      "regra": "R05",
+      "tipo": "Guardrail_Ausente",
+      "qtd": 6
+    },
+    {
+      "regra": "R05",
+      "tipo": "Risco_Integrado",
+      "qtd": 1
+    },
+    {
+      "regra": "R06",
+      "tipo": "Agencia_Excessiva",
+      "qtd": 2
+    },
+    {
+      "regra": "R06",
+      "tipo": "Dado_Inconsistente",
+      "qtd": 1
+    },
+    {
+      "regra": "R07",
+      "tipo": "Conta_Desligada",
+      "qtd": 19
+    },
+    {
+      "regra": "R08",
+      "tipo": "Acesso_Expirado",
+      "qtd": 4
+    },
+    {
+      "regra": "R09",
+      "tipo": "Recertificacao_Vencida",
+      "qtd": 124
+    },
+    {
+      "regra": "R09",
+      "tipo": "Remocao_Nao_Executada",
+      "qtd": 8
+    },
+    {
+      "regra": "R09",
+      "tipo": "Revisao_Vencida",
+      "qtd": 155
+    }
+  ],
+  "cobertura": {
+    "R01": {
+      "evaluated": true,
+      "records_checked": 507,
+      "reason": null,
+      "notes": [
+        "permissões de principals do tipo Aplicacao não comparadas (o baseline é por papel de usuário): 29"
+      ]
+    },
+    "R02": {
+      "evaluated": true,
+      "records_checked": 8,
+      "reason": null,
+      "notes": []
+    },
+    "R03": {
+      "evaluated": true,
+      "records_checked": 30,
+      "reason": null,
+      "notes": []
+    },
+    "R04": {
+      "evaluated": true,
+      "records_checked": 130,
+      "reason": null,
+      "notes": []
+    },
+    "R05": {
+      "evaluated": true,
+      "records_checked": 64,
+      "reason": null,
+      "notes": []
+    },
+    "R06": {
+      "evaluated": true,
+      "records_checked": 15,
+      "reason": null,
+      "notes": []
+    },
+    "R07": {
+      "evaluated": true,
+      "records_checked": 670,
+      "reason": null,
+      "notes": [
+        "usuários em licença com acesso (não tratados como violação por R07; permissões fora do baseline aparecem em R01): 2 (U052, U105)"
+      ]
+    },
+    "R08": {
+      "evaluated": true,
+      "records_checked": 536,
+      "reason": null,
+      "notes": []
+    },
+    "R09": {
+      "evaluated": true,
+      "records_checked": 420,
+      "reason": null,
+      "notes": []
+    },
+    "EXCEPTIONS": {
+      "evaluated": true,
+      "reason": null,
+      "records_checked": 4,
+      "notes": [
+        "valid: 4",
+        "expired: 0",
+        "future: 0",
+        "invalid: 0",
+        "exceções sem achado associado: excecoes linha 4 (DA11, valid), excecoes linha 5 (AI03, valid)"
+      ]
+    },
+    "META": {
+      "evaluated": true,
+      "reason": null,
+      "records_checked": 0,
+      "notes": [
+        "reference_date: 2026-11-05 (fonte: dataset_info.data_referencia)"
+      ]
+    }
+  },
+  "casos_publicos": {
+    "available": true,
+    "reference_date": "2026-11-05",
+    "summary": {
+      "total": 15,
+      "match": 12,
+      "divergent": 1,
+      "unmatched": 1,
+      "computed": 1
+    },
+    "cases": [
+      {
+        "test_case_id": "TC01",
+        "domain": "Acesso",
+        "subject_id": "U003",
+        "related_id": "RES03",
+        "scenario": "Admin permanente fora da baseline",
+        "expected": {
+          "priority": "Critico",
+          "decision": "Revisao",
+          "category": "Excesso_de_Privilegio"
+        },
+        "actual": {
+          "findings": 1,
+          "types": [
+            "Excesso_de_Privilegio"
+          ],
+          "max_severity": "critical",
+          "decision": "Atencao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R01",
+            "finding_type": "Excesso_de_Privilegio",
+            "severity": "critical",
+            "status": "valid_exception",
+            "related_id": "RES03",
+            "source": "permissoes_atuais#490"
+          }
+        ],
+        "extra_findings": [
+          {
+            "rule_id": "R09",
+            "finding_type": "Revisao_Vencida",
+            "severity": "medium",
+            "count": 2
+          }
+        ],
+        "verdict": "divergent",
+        "explanation": "o achado está coberto por exceção válida (decisão do motor: Atencao), mas o caso espera Revisao — o caso público não considera a exceção; decisão de negócio pendente"
+      },
+      {
+        "test_case_id": "TC02",
+        "domain": "Acesso",
+        "subject_id": "U037",
+        "related_id": "RES04",
+        "scenario": "Usuario desligado com permissao ativa",
+        "expected": {
+          "priority": "Critico",
+          "decision": "Revisao",
+          "category": "Conta_Desligada"
+        },
+        "actual": {
+          "findings": 2,
+          "types": [
+            "Conta_Desligada",
+            "Excesso_de_Privilegio"
+          ],
+          "max_severity": "critical",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R01",
+            "finding_type": "Excesso_de_Privilegio",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RES04",
+            "source": "permissoes_atuais#492"
+          },
+          {
+            "rule_id": "R07",
+            "finding_type": "Conta_Desligada",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": "RES04",
+            "source": "permissoes_atuais#492"
+          }
+        ],
+        "extra_findings": [
+          {
+            "rule_id": "R09",
+            "finding_type": "Remocao_Nao_Executada",
+            "severity": "high",
+            "count": 3
+          }
+        ],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC03",
+        "domain": "Acesso",
+        "subject_id": "U099",
+        "related_id": "RES02",
+        "scenario": "Papeis de solicitante e aprovador",
+        "expected": {
+          "priority": "Critico",
+          "decision": "Revisao",
+          "category": "Conflito_SoD"
+        },
+        "actual": {
+          "findings": 2,
+          "types": [
+            "Conflito_SoD",
+            "Excesso_de_Privilegio"
+          ],
+          "max_severity": "critical",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R01",
+            "finding_type": "Excesso_de_Privilegio",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": "RES02",
+            "source": "permissoes_atuais#498"
+          },
+          {
+            "rule_id": "R02",
+            "finding_type": "Conflito_SoD",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": "RES02",
+            "source": "regras_sod#2"
+          }
+        ],
+        "extra_findings": [
+          {
+            "rule_id": "R09",
+            "finding_type": "Recertificacao_Vencida",
+            "severity": "low",
+            "count": 3
+          },
+          {
+            "rule_id": "R09",
+            "finding_type": "Revisao_Vencida",
+            "severity": "medium",
+            "count": 1
+          }
+        ],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC04",
+        "domain": "Acesso",
+        "subject_id": "U010",
+        "related_id": "RES01",
+        "scenario": "Acesso temporario expirado",
+        "expected": {
+          "priority": "Alto",
+          "decision": "Revisao",
+          "category": "Acesso_Expirado"
+        },
+        "actual": {
+          "findings": 2,
+          "types": [
+            "Acesso_Expirado",
+            "Excesso_de_Privilegio"
+          ],
+          "max_severity": "high",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R01",
+            "finding_type": "Excesso_de_Privilegio",
+            "severity": "medium",
+            "status": "non_compliant",
+            "related_id": "RES01",
+            "source": "permissoes_atuais#505"
+          },
+          {
+            "rule_id": "R08",
+            "finding_type": "Acesso_Expirado",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RES01",
+            "source": "permissoes_atuais#505"
+          }
+        ],
+        "extra_findings": [
+          {
+            "rule_id": "R09",
+            "finding_type": "Recertificacao_Vencida",
+            "severity": "low",
+            "count": 1
+          },
+          {
+            "rule_id": "R09",
+            "finding_type": "Revisao_Vencida",
+            "severity": "high",
+            "count": 1
+          }
+        ],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC05",
+        "domain": "Acesso",
+        "subject_id": "U001",
+        "related_id": "RES01",
+        "scenario": "Acesso compativel com papel",
+        "expected": {
+          "priority": "Baixo",
+          "decision": "Conforme",
+          "category": "Sem_Achado"
+        },
+        "actual": {
+          "findings": 0,
+          "types": [],
+          "max_severity": null,
+          "decision": "Conforme"
+        },
+        "matched_findings": [],
+        "extra_findings": [
+          {
+            "rule_id": "R09",
+            "finding_type": "Revisao_Vencida",
+            "severity": "medium",
+            "count": 1
+          }
+        ],
+        "verdict": "match",
+        "explanation": "nenhum achado no escopo do caso"
+      },
+      {
+        "test_case_id": "TC06",
+        "domain": "Dados",
+        "subject_id": "DA18",
+        "related_id": null,
+        "scenario": "Ativo sem proprietario",
+        "expected": {
+          "priority": "Alto",
+          "decision": "Revisao",
+          "category": "Proprietario_Ausente"
+        },
+        "actual": {
+          "findings": 2,
+          "types": [
+            "Proprietario_Ausente",
+            "Retencao_Ausente"
+          ],
+          "max_severity": "high",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R03",
+            "finding_type": "Proprietario_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RES04",
+            "source": "ativos_dados#19"
+          },
+          {
+            "rule_id": "R04",
+            "finding_type": "Retencao_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RP018",
+            "source": "politicas_retencao#19"
+          }
+        ],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC07",
+        "domain": "Dados",
+        "subject_id": "DA20",
+        "related_id": null,
+        "scenario": "Ativo sem classificacao",
+        "expected": {
+          "priority": "Alto",
+          "decision": "Revisao",
+          "category": "Classificacao_Ausente"
+        },
+        "actual": {
+          "findings": 2,
+          "types": [
+            "Classificacao_Ausente",
+            "Retencao_Ausente"
+          ],
+          "max_severity": "high",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R03",
+            "finding_type": "Classificacao_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RES16",
+            "source": "ativos_dados#21"
+          },
+          {
+            "rule_id": "R04",
+            "finding_type": "Retencao_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RP020",
+            "source": "politicas_retencao#21"
+          }
+        ],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC08",
+        "domain": "Dados",
+        "subject_id": "DA02",
+        "related_id": null,
+        "scenario": "Restrito com politica completa",
+        "expected": {
+          "priority": "Baixo",
+          "decision": "Conforme",
+          "category": "Sem_Achado"
+        },
+        "actual": {
+          "findings": 0,
+          "types": [],
+          "max_severity": null,
+          "decision": "Conforme"
+        },
+        "matched_findings": [],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "nenhum achado no escopo do caso"
+      },
+      {
+        "test_case_id": "TC09",
+        "domain": "Compartilhamento",
+        "subject_id": "SH005",
+        "related_id": null,
+        "scenario": "Destino deve ser comparado com aprovacao",
+        "expected": {
+          "priority": "Variavel",
+          "decision": "Calcular",
+          "category": "Destino_Aprovado_ou_Nao"
+        },
+        "actual": {
+          "findings": 0,
+          "types": [],
+          "max_severity": null,
+          "decision": "Conforme"
+        },
+        "matched_findings": [],
+        "extra_findings": [],
+        "verdict": "computed",
+        "explanation": "resultado calculado pelo motor: nenhum achado — destino aprovado, com minimização e proteção; compartilhamento conforme"
+      },
+      {
+        "test_case_id": "TC10",
+        "domain": "Retencao",
+        "subject_id": "DA23",
+        "related_id": null,
+        "scenario": "Politica de retencao incompleta",
+        "expected": {
+          "priority": "Alto",
+          "decision": "Revisao",
+          "category": "Retencao_Ausente"
+        },
+        "actual": {
+          "findings": 1,
+          "types": [
+            "Retencao_Ausente"
+          ],
+          "max_severity": "high",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R04",
+            "finding_type": "Retencao_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "RP023",
+            "source": "politicas_retencao#24"
+          }
+        ],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC11",
+        "domain": "IA",
+        "subject_id": "AI06",
+        "related_id": null,
+        "scenario": "Ação crítica com escrita e dados financeiros",
+        "expected": {
+          "priority": "Critico",
+          "decision": "Revisao",
+          "category": "Agencia_Excessiva"
+        },
+        "actual": {
+          "findings": 6,
+          "types": [
+            "Acesso_Excessivo",
+            "Agencia_Excessiva",
+            "Fonte_Nao_Aprovada",
+            "Fonte_Sem_Minimizacao"
+          ],
+          "max_severity": "critical",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R05",
+            "finding_type": "Acesso_Excessivo",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": null,
+            "source": "controles_ia#7"
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Sem_Minimizacao",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "DA01",
+            "source": "fontes_dados_ia#18"
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Nao_Aprovada",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": "DA02",
+            "source": "fontes_dados_ia#19"
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Sem_Minimizacao",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "DA02",
+            "source": "fontes_dados_ia#19"
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Sem_Minimizacao",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": "DA11",
+            "source": "fontes_dados_ia#20"
+          },
+          {
+            "rule_id": "R06",
+            "finding_type": "Agencia_Excessiva",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": null,
+            "source": "casos_uso_ia#7"
+          }
+        ],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC12",
+        "domain": "IA",
+        "subject_id": "AI12",
+        "related_id": null,
+        "scenario": "Caso publico de baixo impacto",
+        "expected": {
+          "priority": "Baixo",
+          "decision": "Conforme",
+          "category": "Sem_Achado"
+        },
+        "actual": {
+          "findings": 0,
+          "types": [],
+          "max_severity": null,
+          "decision": "Conforme"
+        },
+        "matched_findings": [],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "nenhum achado no escopo do caso"
+      },
+      {
+        "test_case_id": "TC13",
+        "domain": "IA",
+        "subject_id": "AI02",
+        "related_id": null,
+        "scenario": "Fonte restrita com prompt protection ausente",
+        "expected": {
+          "priority": "Alto",
+          "decision": "Revisao",
+          "category": "Guardrail_Ausente"
+        },
+        "actual": {
+          "findings": 1,
+          "types": [
+            "Guardrail_Ausente"
+          ],
+          "max_severity": "high",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R05",
+            "finding_type": "Guardrail_Ausente",
+            "severity": "high",
+            "status": "non_compliant",
+            "related_id": null,
+            "source": "controles_ia#3"
+          }
+        ],
+        "extra_findings": [],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC14",
+        "domain": "Integrado",
+        "subject_id": "AI14",
+        "related_id": "DA03",
+        "scenario": "IA crítica + credenciais + acesso excessivo",
+        "expected": {
+          "priority": "Critico",
+          "decision": "Revisao",
+          "category": "Risco_Integrado"
+        },
+        "actual": {
+          "findings": 1,
+          "types": [
+            "Risco_Integrado"
+          ],
+          "max_severity": "critical",
+          "decision": "Revisao"
+        },
+        "matched_findings": [
+          {
+            "rule_id": "R05",
+            "finding_type": "Risco_Integrado",
+            "severity": "critical",
+            "status": "non_compliant",
+            "related_id": "DA03",
+            "source": "casos_uso_ia#15"
+          }
+        ],
+        "extra_findings": [
+          {
+            "rule_id": "R05",
+            "finding_type": "Acesso_Excessivo",
+            "severity": "critical",
+            "count": 1
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Nao_Aprovada",
+            "severity": "critical",
+            "count": 1
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Sem_Minimizacao",
+            "severity": "high",
+            "count": 2
+          },
+          {
+            "rule_id": "R05",
+            "finding_type": "Fonte_Sem_Minimizacao",
+            "severity": "medium",
+            "count": 1
+          },
+          {
+            "rule_id": "R06",
+            "finding_type": "Agencia_Excessiva",
+            "severity": "critical",
+            "count": 1
+          }
+        ],
+        "verdict": "match",
+        "explanation": "categoria, prioridade e decisão coincidem"
+      },
+      {
+        "test_case_id": "TC15",
+        "domain": "Integrado",
+        "subject_id": "AI03",
+        "related_id": "DA12",
+        "scenario": "Piloto alto impacto com exceção válida",
+        "expected": {
+          "priority": "Medio",
+          "decision": "Atencao",
+          "category": "Excecao_Valida"
+        },
+        "actual": {
+          "findings": 0,
+          "types": [],
+          "max_severity": null,
+          "decision": "Conforme"
+        },
+        "matched_findings": [],
+        "extra_findings": [],
+        "verdict": "unmatched",
+        "explanation": "existe exceção EX004 (valid) para o sujeito, mas o motor não produz nenhum achado ao qual ela se aplique com as regras atuais; a definição do achado esperado depende da equipe"
+      }
+    ]
+  }
+}
